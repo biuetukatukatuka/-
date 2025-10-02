@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript入門</title>
+  </head>
+  <body>
+    <script>
+      const n = window.prompt("1~100の間で数値を入力してください");
+      if (n >= 1 && n <= 100) {
+        for (let i = 1; i <= n; i++) {
+          document.write(i);
+          if (i < n) {
+            document.write("、");
+          }
+        }
+      } else if (n > 100) {
+        document.write("100より大きい値が入力されました");
+      } else {
+        document.write("不正な値が入力されました");
+      }
+    </script>
+  </body>
+</html>

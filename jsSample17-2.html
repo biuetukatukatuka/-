@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript入門</title>
+  </head>
+  <body>
+    <h1 id="id1"></h1>
+    <input type="button" value="スタート" onclick="start()" />
+    <input type="button" value="ストップ" onclick="stop()" />
+    <script>
+      let starttime;
+      let timerID = null;
+      function start() {
+        if (timerID === null) {
+          starttime = new Date();
+          timerID = setInterval(dispTime, 10);
+        }
+      }
+      function stop() {
+        clearInterval(timerID);
+        timerID = null;
+      }
+      function dispTime() {
+        let nowtime = new Date();
+        let seconds = (nowtime - starttime) / 1000;
+        document.getElementById(
+          "id1"
+        ).innerHTML = `スタートボタンを押してから:${seconds.toFixed(
+          2
+        )}秒を通過`;
+      }
+    </script>
+  </body>
+</html>
