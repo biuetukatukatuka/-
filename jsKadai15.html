@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ブラウザ判別</title>
+  </head>
+  <body>
+    <h1>ブラウザの判別結果</h1>
+    <p id="result"></p>
+
+    <script>
+      const userAgent = window.navigator.userAgent.toLowerCase();
+      const resultElement = document.getElementById("result");
+      if (userAgent.indexOf("firefox") > -1) {
+        resultElement.innerHTML = "Firefox で閲覧しています";
+      } else if (
+        userAgent.indexOf("chrome") > -1 &&
+        userAgent.indexOf("edg") === -1
+      ) {
+        resultElement.innerHTML = "Chrome で閲覧しています";
+      } else {
+        resultElement.innerHTML = "Firefox、または Chrome を使用してください。";
+      }
+    </script>
+  </body>
+</html>

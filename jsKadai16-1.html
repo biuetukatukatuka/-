@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ブラウザサイズ判別</title>
+  </head>
+  <body>
+    <h1>ブラウザサイズの判別結果</h1>
+    <p id="result"></p>
+
+    <script>
+      const browserWidth = window.innerWidth;
+      const resultElement = document.getElementById("result");
+      resultElement.innerHTML += `現在のブラウザ幅: ${browserWidth}px <br><br>`;
+      if (browserWidth <= 960) {
+        resultElement.innerHTML +=
+          "スマートフォンまたはタブレットで閲覧している可能性があります。";
+      } else {
+        resultElement.innerHTML += "PC で閲覧しています。";
+      }
+    </script>
+  </body>
+</html>
