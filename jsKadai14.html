@@ -8,16 +8,9 @@
     <h1 id="countdown"></h1>
     <script>
       const graduationDate = new Date(2026, 2, 14, 10, 0, 0);
-
       function countdown() {
         const now = new Date();
         const diff = graduationDate.getTime() - now.getTime();
-        if (diff < 0) {
-          document.getElementById("countdown").innerHTML =
-            "卒業おめでとうございます！";
-          clearInterval(timerId);
-          return;
-        }
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
         const hours = Math.floor(
           (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
